@@ -1,0 +1,9 @@
+$color-primary: rgb(2, 2, 48);
+body {
+  background: linear-gradient($color-primary, $color-primary);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  width: 100vw;
+}
