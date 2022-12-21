@@ -1,0 +1,142 @@
+@import url(grid-items.css);
+/* LIKELY TO USE COLOURS */
+:root {
+  --color-one: #edf2ff;
+  --color-two: #ebebee;
+  --color-three: #c3fae8;
+  --color-four: #96f2d7;
+  --color-five: #20c997;
+  --color-six: #0ca678;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+}
+header {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.header-video {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 90%;
+  z-index: -1;
+}
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  text-align: center;
+  color: var(--color-two);
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.content-paragraph {
+  margin-top: 6rem;
+}
+.content-paragraph a {
+  text-decoration: none;
+  color: var(--color-three);
+}
+.chevron {
+  animation: moveChevron 3s infinite alternate-reverse;
+}
+@keyframes moveChevron {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(18px);
+  }
+}
+
+/*  */
+/*  */
+/* gallery images and it's buttons */
+/*  */
+/*  */
+.gallery-buttons {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  padding: 10rem 0;
+}
+.gallery-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 1rem 2.5rem;
+  box-shadow: 0 0 0 0.18rem var(--color-five);
+  cursor: pointer;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  color: var(--color-five);
+  transition: all 0.5s ease-in-out;
+}
+.gallery-btn-active {
+  background-color: var(--color-five);
+  color: var(--color-one);
+  box-shadow: none;
+}
+.gallery-btn:hover {
+  background: var(--color-five);
+  color: var(--color-one);
+  box-shadow: none;
+}
+/*  */
+/*  */
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(18, 10vh);
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+.grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease-in-out;
+}
+.grid-item {
+  overflow: hidden;
+  border-radius: 0.3rem;
+}
+.grid-item:hover .grid-image {
+  transform-origin: center;
+  transform: scale(1.15);
+}
